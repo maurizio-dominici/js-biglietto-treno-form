@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-bs-theme="dark">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -69,27 +69,30 @@
     <div class="container">
       <h1 class="my-5">Biglietto treno form</h1>
 
-      <div class="row">
-        <div class="col-3">
-          <label for="name">Nome e Cognome</label>
-          <input id="name" type="text" value="" />
+      <form id="form-train" class="col">
+        <div class="row align-items-center justify-content-between">
+          <div class="col-3">
+            <label for="name">Nome e Cognome</label>
+            <input id="name" type="text" value="" />
+          </div>
+          <div class="col-3">
+            <label for="km">Totale km</label>
+            <input id="km" type="number" value="" />
+          </div>
+          <div class="col-3">
+            <label for="age">Fascia di età</label>
+            <select id="age">
+              <option value="maggiorenne">Maggiorenne</option>
+              <option value="minorenne">Minorenne</option>
+              <option value="over65">Over65</option>
+            </select>
+          </div>
+          <div class="col-2">
+            <button id="test">on/off</button>
+          </div>
         </div>
-        <div class="col-3">
-          <label for="km">Totale km</label>
-          <input id="km" type="number" value="" />
-        </div>
-        <div class="col-3">
-          <label for="age">Fascia di età</label>
-          <select id="age">
-            <option value="maggiorenne">Maggiorenne</option>
-            <option value="minorenne">Minorenne</option>
-            <option value="over65">Over65</option>
-          </select>
-        </div>
-        <div class="col-3">
-          <button id="test">on/off</button>
-        </div>
-      </div>
+      </form>
+      <div id="card-hidden"></div>
     </div>
   </body>
 </html>
