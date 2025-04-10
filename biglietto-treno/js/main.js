@@ -17,17 +17,19 @@ const cardHiddenEl = document.getElementById("card-hidden");
 formEl.addEventListener("submit", (event) => {
   event.preventDefault();
   const totalKm = parseInt(totalKmEl.value); // int
-  let passengerAge = passengersAgeRangeEl.value;
   let price = totalKm * kmPrice;
+  const discountMinor = price * 0.8;
+  const discountSenior = price * 0.6;
+  let passengerAge = passengersAgeRangeEl.value;
 
   if (passengerAge === "minorenne") {
     console.log("l'utente è minorenne");
 
-    price = price * 0.8;
+    price = discountMinor;
   } else if (passengerAge === "over65") {
     console.log("l'utente è over65");
 
-    price = price * 0.6;
+    price = discountSenior;
   }
 
   // console.log(namePassengersEl.value);
@@ -44,6 +46,11 @@ formEl.addEventListener("submit", (event) => {
           <h5 class="card-title">${`hai acquistato al prezzo ${price.toFixed(
             2
           )}€`}</h5>
+          <h6>riepilogo del biglietto</h6>
+          <ul>
+            <li>Range di età: ${passengersAgeRangeEl.value}</li>
+            <li>Km selezionati: ${totalKmEl.value}</li>
+          </ul>
         </div>
       </div>
     </div>
